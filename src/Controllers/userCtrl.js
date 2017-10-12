@@ -1,13 +1,10 @@
-const fetchUser = (req,res,next) => {
-    const id = req.body.params.id;
+// const fetchUser = (req,res,next) => {
+//     const id = req.body.params.id;
 
-}; 
+// };
 
-var getUser = function(id){
+var getUser = function(id) {};
 
-}
-
-
-module.exports = (user) => {
-    getUser
+module.exports = user => {
+  getUser;
 };

@@ -1,13 +1,14 @@
 const mongoose = require("mongoose");
 var userSchema = mongoose.Schema;
 
-var userModel = new Schema({
-	id: int,
-	name: string,
-	age: int,
-	height: double,
-	weight: double,
-	password: string
+//TODO: Mongoose har ikke double/float, derfor skal vi bruge number til height og weight. Dog kan vi hente et plugin til at lave til float.
+var userModel = new userSchema({
+  id: Number,
+  name: String,
+  age: Number,
+  height: Number,
+  weight: Number,
+  password: String
 });
 
 module.exports = mongoose.model("user", userModel);

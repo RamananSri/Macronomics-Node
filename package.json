@@ -1,0 +1,24 @@
+{
+  "name": "macronomics-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RamananSri/Macronomics-Node.git"
+  },
+  "author": "Ramanan Sriskandarajah, Daniel Sørensen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RamananSri/Macronomics-Node/issues"
+  },
+  "homepage": "https://github.com/RamananSri/Macronomics-Node#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.12.1"
+  }
+}

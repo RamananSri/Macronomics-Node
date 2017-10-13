@@ -4,38 +4,38 @@ const userCtrl = require("../Controllers/userCtrl")(user);
 const bodyParser = require("body-parser");
 router.use(bodyParser.json());
 router.use(
-  bodyParser.urlencoded({
-    extended: true
-  })
+	bodyParser.urlencoded({
+		extended: true
+	})
 );
 
 // http://mongoosejs.com/docs/api.html dette link er til dokumentation til diverse funktioner
 
 /* GET by id */
 router.get("/:id", function(req, res) {
-  user
-    .findOne({
-      id: req.params.id
-    })
-    .exec(function(error, result) {
-      if (error) {
-        res.send("fejl: " + error);
-      }
-      console.log("User fundet");
-      res.json(result);
-    });
+	user
+		.findOne({
+			id: req.params.id
+		})
+		.exec(function(error, result) {
+			if (error) {
+				res.send("fejl: " + error);
+			}
+			console.log("User fundet");
+			res.json(result);
+		});
 });
 
 /* GET all - Dette er bare for testing */
 router.get("/", function(req, res) {
-  console.log("testing");
-  user.find({}).exec(function(error, results) {
-    if (error) {
-      res.send("fejl: " + error);
-    }
-    console.log("det er ok");
-    res.json(results);
-  });
+	console.log("testing");
+	user.find({}).exec(function(error, results) {
+		if (error) {
+			res.send("fejl: " + error);
+		}
+		console.log("det er ok");
+		res.json(results);
+	});
 });
 
 /* POST user */
@@ -60,13 +60,13 @@ router.get("/", function(req, res) {
 
 /* POST user - bedre måde at gøre det på? */
 router.post("/", function(req, res) {
-  user.create(req.body, function(error, result) {
-    if (error) {
-      res.send("fejl");
-    }
-    console.log(result);
-    res.send(user);
-  });
+	user.create(req.body, function(error, result) {
+		if (error) {
+			res.send("fejl");
+		}
+		console.log(result);
+		res.send(user);
+	});
 });
 
 /* fandt en på netter som mente dette skulle virke i stedet for, har ikke læst op på findByIdAndUpdate endnu */
@@ -84,36 +84,36 @@ router.post("/", function(req, res) {
 
 /* PUT user */
 router.put("/:id", function(req, res) {
-  user.findOneAndUpdate(
-    {
-      id: req.params.id
-    },
-    {
-      $set: { name: req.body.name, password: req.body.password }
-    },
-    { upsert: true },
-    function(error, result) {
-      if (error) {
-        console.log("fejl");
-      }
-      res.send(user);
-    }
-  );
+	user.findOneAndUpdate(
+		{
+			id: req.params.id
+		},
+		{
+			$set: { name: req.body.name, password: req.body.password }
+		},
+		{ upsert: true },
+		function(error, result) {
+			if (error) {
+				console.log("fejl");
+			}
+			res.send(user);
+		}
+	);
 });
 
 /*DELETE user */
 router.delete("/:id", function(req, res) {
-  user.findOneAndRemove(
-    {
-      id: req.params.id
-    },
-    function(error, resulst) {
-      if (error) {
-        res.send("fejl ved sletning");
-      }
-      res.send(user);
-    }
-  );
+	user.findOneAndRemove(
+		{
+			id: req.params.id
+		},
+		function(error, resulst) {
+			if (error) {
+				res.send("fejl ved sletning");
+			}
+			res.send(user);
+		}
+	);
 });
 
 module.exports = router;

@@ -5,3 +5,5 @@ Macronomics is an application for calculation of calories and bodyweight trackin
 * Macronomics-Node: Node.Js web API
 * Macronimics-WPF: WPF front-end
 * Macronomics-Xamarin: Xamarin front-end for iOS & Android
+
+The projects are developed and maintained by computer science students Daniel & Ramanan.    

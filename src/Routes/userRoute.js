@@ -1,8 +1,9 @@
 const router = require("express").Router();
-const bodyParser = require("body-parser"); // Expected encoding in body = JSON
-router.use(bodyParser.json());
+const bodyParser = require("body-parser");
 
 const userCtrl = require("../Controllers/userCtrl");
+
+router.use(bodyParser.json()); // Expected encoding in body = JSON
 
 // http://mongoosejs.com/docs/api.html mongoose documentation link
 

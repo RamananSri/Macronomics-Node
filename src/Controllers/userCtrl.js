@@ -29,7 +29,7 @@ var postUser = function(req, res) {
 };
 
 var deleteUser = function(req, res) {
-	user.findOneAndRemove({ id: req.params.id }, function(error, resulst) {
+	user.findOneAndRemove({ id: req.params.id }, function(error, result) {
 		if (error) {
 			res.send("fejl ved sletning");
 		}
@@ -52,9 +52,7 @@ var deleteUser = function(req, res) {
 
 var putUser = function(req, res) {
 	user.findOneAndUpdate(
-		{
-			id: req.params.id
-		},
+		{ id: req.params.id },
 		{
 			$set: { name: req.body.name, password: req.body.password }
 		},
@@ -67,6 +65,10 @@ var putUser = function(req, res) {
 		}
 	);
 };
+
+var asd = function(req,res){
+    
+}
 
 module.exports = {
 	getUserById,
